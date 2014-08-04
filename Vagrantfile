@@ -13,7 +13,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "jessie"
   config.vm.box_url = "https://downloads.sourceforge.net/project/vagrantboxjessie/debian80.box"
 
-  config.vm.provision "shell", inline: "cd /vagrant && ./development-setup.sh && echo 'export PATH=$PATH:/vagrant' >> /home/vagrant/.bashrc && source /home/vagrant/.bashrc"
+  config.vm.synced_folder ".", "/home/vagrant/analizo"
+
+  config.vm.provision "shell", inline: "cd analizo && ./development-setup.sh"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
