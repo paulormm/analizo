@@ -55,12 +55,12 @@ sub _initialize_metric_report {
 sub list {
   my ($self) = @_;
   my %list = (
-    total_cof => "Total Coupling Factor",
-    total_modules => "Total Number of Modules",
-    total_nom => "Total Number of Methods",
-    total_loc => "Total Lines of Code",
-    total_modules_with_defined_methods => "Total number of modules with at least one defined method",
-    total_modules_with_defined_attributes => "Total number of modules with at least one defined attributes"
+    total_cof => "Global Coupling Factor",
+    total_modules => "Global  Number of Modules",
+    total_nom => "Global Number of Methods",
+    total_loc => "Global  Lines of Code",
+    total_modules_with_defined_methods => "Global number of modules with at least one defined method",
+    total_modules_with_defined_attributes => "Global number of modules with at least one defined attributes"
   );
   for my $metric (keys %{$self->calculators}) {
     $list{$metric} = $self->calculators->{$metric}->description;
