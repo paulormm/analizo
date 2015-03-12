@@ -14,7 +14,7 @@ sub new {
 }
 
 sub description {
-  return 'Average Cyclomatic Complexity per Method';
+  return 'Average Cyclomatic Complexity ';
 }
 
 sub calculate {
